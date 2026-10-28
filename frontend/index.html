@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper & Page — Boekenwinkel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">Paper<span>&</span>Page</a>
+    <nav><a href="#catalogus">Catalogus</a><a href="#account">Account</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">JOUW VOLGENDE HOOFDSTUK</p>
+      <h1>Verhalen die<br><em>bijblijven.</em></h1>
+      <p>Ontdek je volgende favoriete boek.</p>
+      <a class="button" href="#catalogus">Bekijk catalogus</a>
+    </section>
+    <section id="catalogus" class="section">
+      <div class="section-heading"><div><p class="eyebrow">ONTDEK</p><h2>Onze boeken</h2></div><button id="refresh" class="button secondary">Vernieuwen</button></div>
+      <p id="status" class="status">Catalogus laden…</p>
+      <div id="books" class="book-grid"></div>
+    </section>
+    <section id="account" class="section account">
+      <p class="eyebrow">RESERVEREN</p><h2>Maak een account</h2>
+      <p class="muted">Registreer om daarna met je gebruikers-ID een reservatie te maken. Deze academische demo heeft nog geen beveiligde sessie.</p>
+      <form id="register-form" class="form-grid">
+        <label>Naam<input name="name" required></label>
+        <label>E-mailadres<input name="email" type="email" required></label>
+        <label>Wachtwoord<input name="password" type="password" minlength="8" required></label>
+        <button class="button" type="submit">Registreren</button>
+      </form>
+      <p id="account-status" class="status"></p>
+    </section>
+  </main>
+  <footer>Paper & Page · Academisch project</footer>
+  <dialog id="book-dialog">
+    <button id="close-dialog" class="close" aria-label="Sluiten">×</button>
+    <div id="book-detail"></div>
+    <div class="reserve-panel">
+      <h3>Reserveer dit boek</h3>
+      <label>Gebruikers-ID<input id="reserve-user" type="number" min="1" placeholder="ID na registratie"></label>
+      <label>Aantal<input id="reserve-quantity" type="number" min="1" value="1"></label>
+      <button id="reserve-button" class="button">Reserveren</button>
+      <p id="reserve-status" class="status"></p>
+    </div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
